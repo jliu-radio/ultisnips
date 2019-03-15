@@ -132,6 +132,11 @@ class SnippetUtil(object):
 
     # Utility methods
     @property
+    def path(self):
+        """The path to the file"""
+        return _vim.eval('expand("%")') or ''
+    
+    @property
     def fn(self):  # pylint:disable=no-self-use,invalid-name
         """The filename."""
         return _vim.eval('expand("%:t")') or ''
